@@ -13,3 +13,73 @@
  *= require_tree .
  *= require_self
  */
+
+.main-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 200px;
+  margin-top: 40px;
+  background-color: #18453B;
+  color: #FFFFFF;
+  font-family: "Poiret One";
+  font-size: x-large;
+}
+
+.headerOne {
+  margin: 0px;
+  font-size: 70px;
+  font-weight: lighter;
+}
+
+.headerTwo {
+  margin: 0px;
+  font-size: 20px;
+}
+
+.pageContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 300px;
+  height: 300px;
+  margin: 70px;
+  background-color: #E9DCC9;
+}
+
+.productText {
+  margin-left: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} 
+
+.productLink {
+  margin-bottom: 10px;
+}
+
+.ivoryLineOne {
+  width: 100vw;
+  background-color: #FDFAF5;
+  height: 10px;
+  margin-bottom: 20px;
+}
+
+.ivoryLineTwo {
+  width: 100vw;
+  background-color: #FDFAF5;
+  height: 10px;
+  margin-top: 20px;
+}
+
+.mainDisplay {
+  width: 100vw;
+  height: 270px;
+  background-color: #E9DCC9;
+}

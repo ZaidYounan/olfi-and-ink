@@ -1,0 +1,30 @@
+<div class="App">
+  <header>
+    <div class="main-header">
+      <div class="ivoryLineOne"></div>
+      <h1 class="headerOne">
+        o l f i and i n k
+      </h1>
+      <h5 class="headerTwo">
+        Custom decals for events and everyday moments
+      </h5>
+      <div class="ivoryLineTwo"></div>
+    </div>
+    <div class="mainDisplay">
+
+    </div>
+    <div class="pageContent">
+      <% @products.each do |product| %>
+      <div class="product">
+        <div class="productText">
+          <p><%= product.name %> <span style="float:right; margin-right: 20px;">$<%= product.price %></span></p>
+          <p><%= product.description %></p>
+          <%= link_to 'Add to cart', products_path,class: 'productLink' %>
+        </div>
+      </div>
+      
+      <% end %>
+      <div class="bottomHeader"></div>
+    </div>
+  </header>
+</div>
