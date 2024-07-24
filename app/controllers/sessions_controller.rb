@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  before_action :set_session, only: :destroy
   before_action :authenticate, only: :destroy
 
   def index
@@ -12,6 +11,7 @@ class SessionsController < ApplicationController
   def create
     if user = User.authenticate_by(email: params[:email], password: params[:password])
       @session = user.sessions.create!
+      Current.user = user
       cookies.signed.permanent[:session_token] = { value: @session.id, httponly: true }
 
       redirect_to root_path, notice: "Signed in successfully"
@@ -21,11 +21,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    @session.destroy; redirect_to(home_path, notice: "That session has been logged out")
+    session = Current.user.sessions.find(params[:id])
+    session.destroy
+    Current.user = nil
+    redirect_to root_url, notice: "That session has been logged out"
   end
-
-  private
-    def set_session
-      @session = Current.user.sessions.find(params[:id])
-    end
 end
