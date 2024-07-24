@@ -73,3 +73,5 @@ gem "authentication-zero", "~> 3.0"
 gem "bcrypt", "~> 3.1.7"
 
 gem "tailwindcss-rails", "~> 2.6"
+
+gem "byebug", "~> 11.1"

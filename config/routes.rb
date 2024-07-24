@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get  "sign_in", to: "sessions#new"
-  post "sign_in", to: "sessions#create"
-  get  "sign_up", to: "registrations#new"
-  post "sign_up", to: "registrations#create"
+  get  "sign_in_helooni", to: "sessions#new"
+  post "sign_in_helooni", to: "sessions#create"
+  get  "sign_up_helooni", to: "registrations#new"
+  post "sign_up_helooni", to: "registrations#create"
+
+  get "logout", to: "sessions#destroy"
   resources :sessions, only: [:index, :show, :destroy]
   resource  :password, only: [:edit, :update]
   namespace :identity do

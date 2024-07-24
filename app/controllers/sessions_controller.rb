@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
-  skip_before_action :authenticate, only: %i[ new create ]
-
   before_action :set_session, only: :destroy
+  before_action :authenticate, only: :destroy
 
   def index
     @sessions = Current.user.sessions.order(created_at: :desc)
@@ -17,12 +16,12 @@ class SessionsController < ApplicationController
 
       redirect_to root_path, notice: "Signed in successfully"
     else
-      redirect_to sign_in_path(email_hint: params[:email]), alert: "That email or password is incorrect"
+      redirect_to sign_in_helooni_path(email_hint: params[:email]), alert: "That email or password is incorrect"
     end
   end
 
   def destroy
-    @session.destroy; redirect_to(sessions_path, notice: "That session has been logged out")
+    @session.destroy; redirect_to(home_path, notice: "That session has been logged out")
   end
 
   private

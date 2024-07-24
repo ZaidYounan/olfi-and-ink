@@ -1,0 +1,11 @@
+<%= form_with model: @product, html: { class: 'flex flex-col', style: 'margin: 6rem;'} do |form| %>
+  <%= form.label :name, 'Name' %>
+  <%= form.text_field :name %>
+  <%= form.label :description, 'Description' %>
+  <%= form.text_area :description, size: "60x10" %>
+  <%= form.label :stock_level, 'Stock Level' %>
+  <%= form.number_field :stock_level %>
+  <%= form.label :price, 'Price' %>
+  <%= form.number_field :price %>
+  <%= form.submit %>
+<% end %>
